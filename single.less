@@ -1,0 +1,106 @@
+main {
+    z-index: 0;
+
+    margin: calc(4 * var(--default-gap)) 0;
+
+    &.contact {
+        display: grid;
+        grid-template-rows: 1fr auto 1fr;
+
+        > form {
+            grid-row-start: 2;
+
+            width: 700px;
+            max-width: 90vw;
+    
+            margin: 0 auto;
+            padding: var(--default-gap) 0;
+    
+            > #data-protection {
+                margin-bottom: var(--default-gap);
+            }
+        }
+        > p#contact-feedback {
+            grid-row-start: 3;
+
+            width: 700px;
+            max-width: 90vw;
+
+            margin: 0 auto;
+            padding: var(--default-gap) 0;
+        }
+    }
+    &.inactive {
+        display: none;
+    }
+
+    > h1 {
+        width: 700px;
+        max-width: 90vw;
+
+        margin: var(--default-gap) auto;
+        padding: var(--default-gap) 0;
+
+        color: var(--link-hover-text);
+        text-align: right;
+
+        // &.classes {
+        //     background-image: url('./media/pexels-elina-fairytale-3822864_sw.jpg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;        
+        // }
+        // &.gallery {
+        //     background-image: url('./media/pexels-elina-fairytale-3822906_sw.jpg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;        
+        // }
+        // &.about {
+        //     background-image: url('./media/pexels-elina-fairytale-3823086_sw.jpg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;        
+        // }
+        // &.contact {
+        //     background-image: url('./media/pexels-elina-fairytale-3823203_sw.jpg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;        
+        // }
+        // &.404 {
+        //     background-image: url('./media/pexels-elina-fairytale-3823203_sw.jpg');
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;        
+        // }
+    }
+
+    > article {
+        width: 700px;
+        max-width: 90vw;
+
+        margin: 0 auto;
+        padding: var(--default-gap) 0;
+
+        > button {
+            margin-top: var(--default-gap);
+        }
+
+        > p {
+            margin-bottom: var(--default-gap);
+        }
+    }
+}
+footer {
+    z-index: 0 !important;
+    &.inactive {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div.toggle {
+        grid-template-columns: min-content max-content;
+    }
+}

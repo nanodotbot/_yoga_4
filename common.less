@@ -1,0 +1,40 @@
+div#content {
+    min-height: 100vh;
+    max-width: 100%;
+    padding: 5vh 5vw;
+
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+
+    > header, main, footer {
+        background-color: transparent;
+    }
+    > footer {
+        z-index: 1;
+
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        justify-content: space-between;
+
+        > div#social {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            gap: var(--default-gap);
+
+            > a {
+                display: block;
+
+                > svg {
+                    fill: var(--text);
+                }
+                
+                &:hover {
+                    > svg {
+                        fill: var(--link-hover-text);
+                    }
+                }
+            }
+        }
+    }
+}

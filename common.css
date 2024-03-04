@@ -1,0 +1,33 @@
+div#content {
+  min-height: 100vh;
+  max-width: 100%;
+  padding: 5vh 5vw;
+  display: grid;
+  grid-template-rows: max-content auto max-content;
+}
+div#content > header,
+div#content main,
+div#content footer {
+  background-color: transparent;
+}
+div#content > footer {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  justify-content: space-between;
+}
+div#content > footer > div#social {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--default-gap);
+}
+div#content > footer > div#social > a {
+  display: block;
+}
+div#content > footer > div#social > a > svg {
+  fill: var(--text);
+}
+div#content > footer > div#social > a:hover > svg {
+  fill: var(--link-hover-text);
+}

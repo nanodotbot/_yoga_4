@@ -1,0 +1,105 @@
+header > nav#nav-modal {
+  z-index: 5;
+  position: relative;
+  display: none;
+}
+header > div#nav-header {
+  z-index: 5;
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+}
+header > div#nav-header > a#logo {
+  font-size: var(--font-size-big);
+}
+header > div#nav-header > nav#nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--default-gap);
+}
+header > div#nav-header > nav#nav-links > a.link {
+  font-size: var(--font-size-big);
+}
+header > div#nav-header > nav#nav-links > a.link.active {
+  color: var(--link-hover-text);
+}
+header > div#nav-header div#nav-menu {
+  padding: 1rem 0;
+  display: none;
+  align-self: end;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+}
+header > div#nav-header div#nav-menu > .menu-line {
+  height: 0.2rem;
+  width: 3.4rem;
+  margin: 0.4rem;
+  border-radius: 5px;
+  background-color: var(--text);
+}
+header > div#nav-header div#nav-menu:hover > .menu-line {
+  background-color: var(--link-hover-text);
+  transition: var(--transition-slow);
+}
+@media only screen and (max-width: 600px) {
+  header > nav#nav-modal {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: var(--transition-slow);
+    background-color: var(--background);
+  }
+  header > nav#nav-modal > a.modal-link {
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+  }
+  header > nav#nav-modal > a.modal-link.active,
+  header > nav#nav-modal > a.modal-link:hover {
+    color: var(--link-hover-text);
+    background-color: var(--link-hover-bg);
+  }
+  header > nav#nav-modal.active {
+    z-index: 5;
+    display: flex;
+    opacity: 1;
+  }
+  header > nav#nav-modal.active + div#nav-header > a#logo {
+    opacity: 0;
+  }
+  header div#nav-header {
+    grid-template-columns: auto max-content;
+    background-color: transparent;
+  }
+  header div#nav-header > nav#nav-links {
+    display: none;
+  }
+  header div#nav-header > div#nav-menu {
+    z-index: 5;
+    display: grid;
+  }
+  header div#nav-header > div#nav-menu.active {
+    /* :nth-child(2) {
+                        transform: translateX(-3rem);
+                        opacity: 0;
+                    } */
+  }
+  header div#nav-header > div#nav-menu.active :nth-child(1) {
+    transform: rotate(45deg) translateX(0.35rem) translateY(0.35rem);
+  }
+  header div#nav-header > div#nav-menu.active :nth-child(2) {
+    transform: rotate(135deg) translateX(-0.35rem) translateY(0.35rem);
+  }
+}
